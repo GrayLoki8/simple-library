@@ -46,7 +46,7 @@ public class BookDAO {
     // Join'им таблицы Book и Person и получаем человека, которому принадлежит книга с указанным id
     public Optional<Person> getBookOwner(int id) {
         // Выбираем все колонки таблицы Person из объединенной таблицы
-        return jdbcTemplate.query("SELECT Person2.* FROM Book JOIN Person ON Book.person_id = Person.id " +
+        return jdbcTemplate.query("SELECT Person2.* FROM Book JOIN Person2 ON Book.person_id = Person2.id " +
                 "WHERE Book.id = ?", new Object[]{id}, new BeanPropertyRowMapper<>(Person.class))
                 .stream().findAny();
     }
