@@ -11,7 +11,7 @@ public class Person {
     @Size(min = 2, max = 100, message = "Ім'я повинно бути від 2 до 100 символів")
     private String fullName;
 
-    @Min(value = 1900, message = "Год народження повинний бути більше ніж 1900")
+    @Min(value = 1900, message = "Рік народження повинний бути більше ніж 1900")
     private int yearOfBirth;
 
     // Конструктор по умолчанию нужен для Spring
